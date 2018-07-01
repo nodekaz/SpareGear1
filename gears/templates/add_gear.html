@@ -1,0 +1,29 @@
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+{% block content%}
+
+
+
+<form class="form" enctype="multipart/form-data"  action="{% url 'gears:add_gear' %}" method="post">
+
+    {% csrf_token %}
+    {% bootstrap_form form %}
+{% buttons %}
+        <button type="submit" class="btn btn-primary">
+             أرسل
+        </button>
+        {% endbuttons %}
+
+</form>
+{% endblock %}
+
+</body>
+</html>
